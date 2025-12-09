@@ -1,5 +1,6 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Database {
@@ -15,14 +16,27 @@ public class Database {
             System.err.println("Error importing schema: " + e.getMessage());
         }
     }
-    public static void insert(){
+    public static void update(String table, String vinPort){
+        try (Connection conn = DriverManager.getConnection(url)){
+            String sql = "UPDATE "+ table + " WHERE vin = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
-    public static void update(){
+    public static void delete(String table, String vinPort) {
+        try (Connection connection = DriverManager.getConnection(url)){
 
+            String sql = "DELETE FROM "+ table + " WHERE vin = ?";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+
+            stmt.setString(1, vinPort);
+            int rowsAffected = stmt.executeUpdate();
+            System.out.println(rowsAffected + " rows deleted.");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
-    public static void delete(){
-
-    }
-
 }
