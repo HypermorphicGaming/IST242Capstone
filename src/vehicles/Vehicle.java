@@ -2,7 +2,7 @@ package vehicles;
 
 public class Vehicle {
 
-    private String vin;
+    private final String vin;
     private String make;
     private String model;
     private int year;
@@ -20,5 +20,10 @@ public class Vehicle {
         this.costEstimate = costEstimate;
     }
 
-    
+    public String displayMaintenanceDetails() {}
+
+    public double displayCostEstimate() {
+        return costEstimate;
+    }
+
 }
