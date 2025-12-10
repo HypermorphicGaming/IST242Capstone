@@ -12,12 +12,15 @@ public class Motorcycle extends Vehicle {
         this.chainReplacementCost = chainReplacementCost;
     }
 
-    public double setCostEstimate() {
+    public void setCostEstimate() {
         costEstimate += chainReplacementCost;
     }
 
     @Override
     public String displayMaintenanceDetails() {
-        return "Motorcycle Maintenance:/n" + "Chain Condition: " + chainCondition + "/n" + "Chain Replacement Cost: $" + chainReplacementCost + "/n" + "Estimated Total Cost: $" + costEstimate;
+        return "Motorcycle Maintenance:/n" +
+                "Chain Condition: " + chainCondition + "/n" +
+                "Chain Replacement Cost: $" + chainReplacementCost + "/n" +
+                "Estimated Total Cost: $" + costEstimate;
     }
 }

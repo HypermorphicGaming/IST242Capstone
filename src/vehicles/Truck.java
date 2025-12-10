@@ -13,6 +13,9 @@ public class Truck extends Vehicle {
 
     @Override
     public String displayMaintenanceDetails() {
-        return "Truck Maintenance:/n" + "Max Load: " + maxLoad + "/n" + "Cargo Inspection Cost: $" + cargoInspectionCost + "/n" + "Estimated Total Cost: $" + costEstimate;
+        return "Truck Maintenance:/n" +
+                "Max Load: " + maxLoad + "/n" +
+                "Cargo Inspection Cost: $" + cargoInspectionCost + "/n" +
+                "Estimated Total Cost: $" + costEstimate;
     }
 }

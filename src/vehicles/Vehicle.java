@@ -1,14 +1,14 @@
 package vehicles;
 
-public class Vehicle {
+public abstract class Vehicle {
 
-    private final String vin;
-    private String make;
-    private String model;
-    private int year;
-    private String type;
-    private String vehicleType;
-    private double costEstimate;
+    protected final String vin;
+    protected String make;
+    protected String model;
+    protected int year;
+    protected String type;
+    protected String vehicleType;
+    protected double costEstimate;
 
     public Vehicle(String vin, String make, String model, int year, String type, String vehicleType, double costEstimate) {
         this.vin = vin;
@@ -20,7 +20,7 @@ public class Vehicle {
         this.costEstimate = costEstimate;
     }
 
-    public String displayMaintenanceDetails() {}
+    public abstract String displayMaintenanceDetails();
 
     public double displayCostEstimate() {
         return costEstimate;

@@ -14,6 +14,9 @@ public class Car extends Vehicle {
 
     @Override
     public String displayMaintenanceDetails() {
-        return "Car Maintenance:/n" + "Number of Doors: " + numberOfDoors + "/n" + "Oil Change Cost: $" + oilChangeCost + "/n" + "Estimated Total Cost: $" + costEstimate;
+        return "Car Maintenance:/n" +
+                "Number of Doors: " + numberOfDoors + "/n" +
+                "Oil Change Cost: $" + oilChangeCost + "/n" +
+                "Estimated Total Cost: $" + costEstimate;
     }
 }
