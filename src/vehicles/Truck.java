@@ -1,5 +1,4 @@
 package vehicles;
-import java.lang.*;
 
 public class Truck extends Vehicle {
     private double maxLoad;
@@ -11,11 +10,24 @@ public class Truck extends Vehicle {
         this.cargoInspectionCost = cargoInspectionCost;
     }
 
+    public double getMaxLoad() {
+        return maxLoad;
+    }
+    public double getCargoInspectionCost() {
+        return cargoInspectionCost;
+    }
+    public void setMaxLoad(double maxLoad) {
+        this.maxLoad = maxLoad;
+    }
+    public void setCargoInspectionCost(double cargoInspectionCost) {
+        this.cargoInspectionCost = cargoInspectionCost;
+    }
     @Override
     public String displayMaintenanceDetails() {
-        return "Truck Maintenance:/n" +
-                "Max Load: " + maxLoad + "/n" +
-                "Cargo Inspection Cost: $" + cargoInspectionCost + "/n" +
-                "Estimated Total Cost: $" + costEstimate;
+        double totalCost = costEstimate + cargoInspectionCost;
+        return "Truck Maintenance:\n" +
+                "Max Load: " + maxLoad + "\n" +
+                "Cargo Inspection Cost: $" + cargoInspectionCost + "\n" +
+                "Estimated Total Cost: $" + totalCost;
     }
 }

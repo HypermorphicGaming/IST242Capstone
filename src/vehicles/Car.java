@@ -1,5 +1,4 @@
 package vehicles;
-import java.lang.*;
 
 public class Car extends Vehicle {
 
@@ -12,11 +11,25 @@ public class Car extends Vehicle {
         this.oilChangeCost = oilChangeCost;
     }
 
+    public int getNumberOfDoors() {
+        return numberOfDoors;
+    }
+    public double getOilChangeCost() {
+        return oilChangeCost;
+    }
+    public void setNumberOfDoors(int numberOfDoors) {
+        this.numberOfDoors = numberOfDoors;
+    }
+    public void setOilChangeCost(double oilChangeCost) {
+        this.oilChangeCost = oilChangeCost;
+    }
+
     @Override
     public String displayMaintenanceDetails() {
-        return "Car Maintenance:/n" +
-                "Number of Doors: " + numberOfDoors + "/n" +
-                "Oil Change Cost: $" + oilChangeCost + "/n" +
-                "Estimated Total Cost: $" + costEstimate;
+        double totalCost = costEstimate + oilChangeCost;
+        return "Car Maintenance:\n" +
+                "Number of Doors: " + numberOfDoors + "\n" +
+                "Oil Change Cost: $" + oilChangeCost + "\n" +
+                "Estimated Total Cost: $" + totalCost;
     }
 }

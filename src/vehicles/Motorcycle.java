@@ -1,5 +1,4 @@
 package vehicles;
-import java.lang.*;
 
 public class Motorcycle extends Vehicle {
 
@@ -12,15 +11,25 @@ public class Motorcycle extends Vehicle {
         this.chainReplacementCost = chainReplacementCost;
     }
 
-    public void setCostEstimate() {
-        costEstimate += chainReplacementCost;
+    public String getChainCondition() {
+        return chainCondition;
+    }
+    public double getChainReplacementCost() {
+        return chainReplacementCost;
+    }
+    public void setChainCondition(String chainCondition) {
+        this.chainCondition = chainCondition;
+    }
+    public void setChainReplacementCost(double chainReplacementCost) {
+        this.chainReplacementCost = chainReplacementCost;
     }
 
     @Override
     public String displayMaintenanceDetails() {
-        return "Motorcycle Maintenance:/n" +
-                "Chain Condition: " + chainCondition + "/n" +
-                "Chain Replacement Cost: $" + chainReplacementCost + "/n" +
-                "Estimated Total Cost: $" + costEstimate;
+        double totalCost = costEstimate + chainReplacementCost;
+        return "Motorcycle Maintenance:\n" +
+                "Chain Condition: " + chainCondition + "\n" +
+                "Chain Replacement Cost: $" + chainReplacementCost + "\n" +
+                "Estimated Total Cost: $" + totalCost;
     }
 }
