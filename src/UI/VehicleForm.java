@@ -19,7 +19,6 @@ public class VehicleForm extends JDialog {
     private JTextField vehicleTypeField = new JTextField(12);
     private JTextField costEstimateField = new JTextField(8);
 
-    // subclass fields
     private JTextField doorsField = new JTextField(4);
     private JTextField oilCostField = new JTextField(6);
     private JTextField maxLoadField = new JTextField(6);
@@ -41,7 +40,6 @@ public class VehicleForm extends JDialog {
         p.add(new JLabel("Vehicle Type:")); p.add(vehicleTypeField);
         p.add(new JLabel("Cost Estimate:")); p.add(costEstimateField);
 
-        // subclass panel
         p.add(new JLabel("Car - Doors:")); p.add(doorsField);
         p.add(new JLabel("Car - Oil Cost:")); p.add(oilCostField);
         p.add(new JLabel("Truck - Max Load:")); p.add(maxLoadField);
@@ -57,7 +55,7 @@ public class VehicleForm extends JDialog {
         btns.add(save); btns.add(cancel);
         add(btns, BorderLayout.SOUTH);
 
-        // If editing, populate fields
+
         if (edit != null) {
             vinField.setText(edit.getVin()); vinField.setEditable(false);
             makeField.setText(edit.getMake());
